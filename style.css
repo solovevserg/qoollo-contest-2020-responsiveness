@@ -1,0 +1,136 @@
+:root {
+    --indent: 50px;
+    --smal-indent: 20px;
+    --font-size: 24px;
+    --timing: 0.3s;
+}
+
+/* Adaptive */
+.mobile {
+    --font-size: 14px;
+    --indent: 25px;
+    --timing: 0.175s;
+}
+
+body.mobile .only-pc {
+    display: none;
+}
+
+/* Global Settings */
+
+html {
+    scroll-behavior: smooth;
+    min-width: 320px;
+}
+
+body {
+    margin: 0;
+    font-size: var(--font-size);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* UI */
+
+h1 {
+    font-size: 4em;
+}
+
+h2 {
+    font-size: 3em;
+}
+
+p {
+    max-width: calc(var(--font-size) * 30);
+}
+
+a {
+    color: inherit !important;
+}
+
+/* Header */
+
+header {
+}
+
+header .content {
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+section {
+    padding: var(--indent) 0;
+}
+
+section:nth-child(odd) {
+    background-color: red;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 var(--indent);
+    margin: auto;
+}
+
+/* Menu */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: var(--smal-indent);
+    transition: var(--timing) ease-in-out;
+}
+
+nav a {
+    margin-right: var(--smal-indent);
+}
+
+nav .menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu--scrolled {
+    background-color: black;
+    color: white;
+}
+
+/* Team */
+
+#about .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--indent);
+}
+
+#about .content img {
+    width: 100%;
+    transition: var(--timing) ease-in-out;
+}
+
+#about .content img:hover {
+    filter: brightness(1.9);
+}
+
+@media (max-width: 500px) {
+    #about .content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Feature */
+
+.feature {
+    overflow: hidden;
+}
+
+.feature img {
+    transform: translateX(50%);
+    transition: 0.3s ease-in-out;
+}
+.feature img:hover {
+    transform: translateX(0);
+}
